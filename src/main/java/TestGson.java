@@ -13,9 +13,12 @@ public class TestGson {
 
         //InputStreamReader reader = new InputStreamReader(url.openStream());
         BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-        Example dto = new Gson().fromJson(reader, Example.class);
+        Example[] dto = new Gson().fromJson(reader, Example[].class);
 
-        System.out.println(dto);
+        for (Example example : dto) {
+            System.out.println(example);
+        }
+
 
     }
 
